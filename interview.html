@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interview</title><link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header><h1>Interview Session</h1><button id="themeBtn">🌙</button></header>
+<main class="container">
+<section class="card">
+<div class="topline"><span id="progress">Question 1/5</span><span id="timer">01:00</span></div>
+<div class="progress"><div id="progressBar"></div></div>
+<h2 id="question">Loading...</h2>
+<textarea id="answer" rows="7" placeholder="Type your answer here, or use the microphone..."></textarea>
+<div class="buttons">
+<button class="secondary" id="voiceBtn">🎙️ Start Voice</button>
+<button class="secondary" id="clearBtn">Clear</button>
+<button class="primary" id="nextBtn">Next</button>
+</div>
+<p id="voiceStatus" class="status"></p>
+</section>
+</main>
+<script src="js/questions.js"></script>
+<script src="js/recorder.js"></script>
+<script src="js/interview.js"></script>
+</body>
+</html>

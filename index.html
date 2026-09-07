@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Virtual Interview Simulator</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header><h1>Virtual Interview Simulator</h1><button id="themeBtn">🌙</button></header>
+<main class="container">
+<section class="card hero">
+<h2>Practice. Speak. Improve. 🚀</h2>
+<p>Take a timed mock interview, answer by voice or text, and receive an instant performance report.</p>
+<div class="form-grid">
+<label>Name<input id="candidateName" placeholder="Enter your name"></label>
+<label>Role<select id="role"><option>Java Developer</option><option>Web Developer</option><option>Python Developer</option><option>Data Analyst</option></select></label>
+<label>Difficulty<select id="difficulty"><option>Easy</option><option>Medium</option><option>Hard</option></select></label>
+<label>Questions<select id="questionCount"><option value="5">5</option><option value="10">10</option></select></label>
+</div>
+<button class="primary" id="startBtn">Start Interview</button>
+</section>
+<section class="card">
+<h3>How it works</h3><ol><li>Select your role and difficulty.</li><li>Answer each question before the timer ends.</li><li>Use voice recognition or type your answer.</li><li>Get your score and improvement tips.</li></ol>
+</section>
+</main>
+<script src="js/questions.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
