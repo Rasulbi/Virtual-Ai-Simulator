@@ -97,8 +97,6 @@ function getSuggestions(score) {
         "Try speaking your answers aloud before interviews."
     ];
 }
-
-
 // Create the complete interview result
 function createInterviewResult(
     candidateName,
@@ -163,3 +161,85 @@ function clearInterviewResult() {
 
     localStorage.removeItem("interviewResult");
 }
+// ==========================================
+// Display Result Page
+// ==========================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const result = getSavedInterviewResult();
+
+    if (!result) {
+        document.getElementById("candidate").textContent =
+            "No interview result found.";
+
+        return;
+    }
+
+    const candidateElement =
+        document.getElementById("candidate");
+
+    const roleElement =
+        document.getElementById("role");
+
+    const scoreElement =
+        document.getElementById("score");
+
+    const performanceElement =
+        document.getElementById("performance");
+
+    const detailsElement =
+        document.getElementById("details");
+
+    const suggestionsElement =
+        document.getElementById("suggestions");
+
+
+    candidateElement.textContent =
+        result.candidateName;
+
+    roleElement.textContent =
+        "Role: " + result.role;
+
+    scoreElement.textContent =
+        result.overallScore + "%";
+
+    performanceElement.textContent =
+        "Performance: " + result.performance;
+
+
+    detailsElement.innerHTML =
+        "<p>Total Questions: " +
+        result.totalQuestions +
+        "</p>" +
+
+        "<p>Attempted: " +
+        result.attempted +
+        "</p>" +
+
+        "<p>Skipped: " +
+        result.skipped +
+        "</p>" +
+
+        "<p>Date: " +
+        result.date +
+        "</p>";
+
+
+    suggestionsElement.innerHTML = "";
+
+    result.suggestions.forEach(
+        function (suggestion) {
+
+            const li =
+                document.createElement("li");
+
+            li.textContent =
+                suggestion;
+
+            suggestionsElement.appendChild(li);
+
+        }
+    );
+
+});
